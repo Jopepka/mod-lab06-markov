@@ -1,13 +1,13 @@
 // Copyright 2020 GHA Test Team
 
 #pragma once
+#include <stdlib.h>
 #include <map>
 #include <deque>
 #include <string>
 #include <vector>
 #include <random>
 #include <fstream>
-#include <stdlib.h>
 
 typedef std::deque<std::string> prefix;
 typedef std::vector<std::string> suffixes;

@@ -23,6 +23,7 @@ void Markov::CreateStatetab(std::vector<std::string> words) {
 
 std::string Markov::GenerateText(prefix pref, int lenght) {
     std::string ans = "";
+    int seed = 1;
 
     for (std::string str : pref)
         ans += str + " ";
@@ -30,8 +31,8 @@ std::string Markov::GenerateText(prefix pref, int lenght) {
     for (int i = 0; i < lenght - sizePrefix; i++) {
         if (statetab[pref].size() < 1)
             return ans;
-        
-        int index = rand_r() % statetab[pref].size();
+
+        int index = rand_r(&seed) % statetab[pref].size();
         std::string pushWord = statetab[pref].at(index);
         ans += pushWord + " ";
 
