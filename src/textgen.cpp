@@ -23,7 +23,7 @@ void Markov::CreateStatetab(std::vector<std::string> words) {
 
 std::string Markov::GenerateText(prefix pref, int lenght) {
     std::string ans = "";
-    int seed = 1;
+    unsigned int seed = 1;
 
     for (std::string str : pref)
         ans += str + " ";
