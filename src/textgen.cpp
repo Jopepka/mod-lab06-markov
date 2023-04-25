@@ -9,7 +9,7 @@ Markov::Markov(std::string text, int sizePrefix) {
 
 void Markov::CreateStatetab(std::vector<std::string> words) {
     if (words.size() <= sizePrefix)
-        throw std::invalid_argument("The size of the words must be greater than the length of the prefix");
+        throw std::invalid_argument("violation of lengths");
 
     for (int i = 0; i < words.size() - sizePrefix; i++) {
         prefix  pref = prefix();
@@ -30,8 +30,8 @@ std::string Markov::GenerateText(prefix pref, int lenght) {
     for (int i = 0; i < lenght - sizePrefix; i++) {
         if (statetab[pref].size() < 1)
             return ans;
-
-        int index = rand() % statetab[pref].size();
+        
+        int index = rand_r() % statetab[pref].size();
         std::string pushWord = statetab[pref].at(index);
         ans += pushWord + " ";
 

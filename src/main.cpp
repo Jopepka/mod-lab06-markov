@@ -3,8 +3,7 @@
 #include <iostream>
 #include "textgen.h"
 
-int main()
-{
+int main(){
     setlocale(LC_ALL, "Ru");
 
     std::string text;

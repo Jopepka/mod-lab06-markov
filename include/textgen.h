@@ -7,17 +7,18 @@
 #include <vector>
 #include <random>
 #include <fstream>
+#include <stdlib.h>
 
 typedef std::deque<std::string> prefix;
 typedef std::vector<std::string> suffixes;
 
 class Markov {
-private:
+ private:
     std::map<prefix, suffixes> statetab;
     int sizePrefix;
     void CreateStatetab(std::vector<std::string> words);
 
-public:
+ public:
     Markov(std::string text, int sizePrefix);
 
     std::string GenerateText(prefix pref, int lenght);
